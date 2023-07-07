@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="Services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="menu">
+            <div class="logo"><h2>My<span>Website</span></h2></div>
+
+            <ul>
+                <li><a href="index.html" class="active" onclick="markMenuItem(this)">Home</a></li>
+                <li><a href="About.html" onclick="markMenuItem(this)">About</a></li>
+                <li><a href="Skills.html" onclick="markMenuItem(this)">Skills</a></li>
+                <li><a href="Services.html" onclick="markMenuItem(this)">Services</a></li>
+                <li><a href="Contacts.html" onclick="markMenuItem(this)">Contacts</a></li>
+            </ul>
+
+            <div id="menuBtn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+
+        <main>
+            <section class="infoText">
+                <h1>User Interface (UI) Design</h1>
+                <div class="socialMediaIcons"> 
+                    <a href="https://www.facebook.com/mico.shiobanaii"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/itsmewoozie"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/micoolivares/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@micoolivares3"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+                <br>
+                <p>Here's a sample of my User Interface (UI) Design</p>
+                <img src="UserInterface(UI)Design.jpg" style="width:100%;" alt="UserInterface(UI)Design">
+            </section>
+        </main>
+    </div>
+    <script class="text/javascript">
+        var menu_btn = document.querySelector('#menuBtn');
+        var menu = document.querySelector('.menu ul');
+        var menuItems = document.querySelectorAll('.menu ul li a');
+
+        menu_btn.addEventListener('click', function(){
+            menu_btn.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+        for(i = 0; i < menuItems.length; i++){
+            menuItems[i].addEventListener('click', function(){
+                menu_btn.classList.remove('active');
+                menu.classList.remove('active');
+            })
+        }
+        function markMenuItem(menuItem){
+            for(var i = 0; i < menuItems.length; i++){
+                menuItems[i].classList.remove('active');
+            }
+            menuItem.classList.add('active');
+        }
+    </script>    
+</body>
+</html> 
